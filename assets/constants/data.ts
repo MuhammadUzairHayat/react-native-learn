@@ -1,5 +1,22 @@
 import { icons } from "./icons";
 
+const now = new Date();
+const getFutureRenewal = (daysAhead: number) => {
+  const date = new Date(now);
+  date.setHours(9, 0, 0, 0);
+  date.setDate(date.getDate() + daysAhead);
+  return date.toISOString();
+};
+
+const getDaysLeft = (daysAhead: number) =>
+  Math.max(
+    1,
+    Math.ceil(
+      (new Date(getFutureRenewal(daysAhead)).getTime() - now.getTime()) /
+        86400000,
+    ),
+  );
+
 export const tabs: AppTab[] = [
   { name: "index", title: "Home", icon: icons.home },
   { name: "subscriptions", title: "Subscriptions", icon: icons.wallet },
@@ -13,7 +30,7 @@ export const HOME_USER = {
 
 export const HOME_BALANCE = {
   amount: 2489.48,
-  nextRenewalDate: "2026-03-18T09:00:00.000Z",
+  nextRenewalDate: getFutureRenewal(18),
 };
 
 export const UPCOMING_SUBSCRIPTIONS: UpcomingSubscription[] = [
@@ -23,7 +40,7 @@ export const UPCOMING_SUBSCRIPTIONS: UpcomingSubscription[] = [
     name: "Spotify",
     price: 5.99,
     currency: "USD",
-    daysLeft: 2,
+    daysLeft: getDaysLeft(2),
   },
   {
     id: "notion",
@@ -31,7 +48,7 @@ export const UPCOMING_SUBSCRIPTIONS: UpcomingSubscription[] = [
     name: "Notion",
     price: 12.0,
     currency: "USD",
-    daysLeft: 4,
+    daysLeft: getDaysLeft(4),
   },
   {
     id: "figma",
@@ -39,7 +56,7 @@ export const UPCOMING_SUBSCRIPTIONS: UpcomingSubscription[] = [
     name: "Figma",
     price: 15.0,
     currency: "USD",
-    daysLeft: 6,
+    daysLeft: getDaysLeft(6),
   },
 ];
 
@@ -56,7 +73,7 @@ export const HOME_SUBSCRIPTIONS: Subscription[] = [
     price: 77.49,
     currency: "USD",
     billing: "Monthly",
-    renewalDate: "2026-03-20T10:00:00.000Z",
+    renewalDate: getFutureRenewal(18),
     color: "#f5c542",
   },
   {
@@ -71,7 +88,7 @@ export const HOME_SUBSCRIPTIONS: Subscription[] = [
     price: 9.99,
     currency: "USD",
     billing: "Monthly",
-    renewalDate: "2026-03-24T10:00:00.000Z",
+    renewalDate: getFutureRenewal(21),
     color: "#e8def8",
   },
   {
@@ -86,7 +103,7 @@ export const HOME_SUBSCRIPTIONS: Subscription[] = [
     price: 20.0,
     currency: "USD",
     billing: "Monthly",
-    renewalDate: "2026-03-27T10:00:00.000Z",
+    renewalDate: getFutureRenewal(23),
     color: "#b8d4e3",
   },
   {
@@ -101,7 +118,7 @@ export const HOME_SUBSCRIPTIONS: Subscription[] = [
     price: 119.99,
     currency: "USD",
     billing: "Yearly",
-    renewalDate: "2026-04-02T10:00:00.000Z",
+    renewalDate: getFutureRenewal(28),
     color: "#b8e8d0",
   },
 ];
