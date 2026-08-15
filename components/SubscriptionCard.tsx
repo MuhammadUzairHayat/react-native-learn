@@ -22,6 +22,9 @@ const SubscriptionCard = ({
   return (
     <Pressable
       onPress={onPress}
+      accessibilityRole="button"
+      accessibilityState={{ expanded }}
+      accessibilityHint="Shows or hides subscription details"
       className={clsx(
         "sub-card mb-2",
         expanded ? "sub-card-expanded" : "bg-card",

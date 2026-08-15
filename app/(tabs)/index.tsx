@@ -21,7 +21,7 @@ export default function HomeScreen() {
 
   return (
     <SafeAreaView className="flex-1 p-5 bg-background">
-      <View className="mb-5">
+      <View className="flex-1 mb-5">
         <FlatList
           ListHeaderComponent={() => (
             <>
