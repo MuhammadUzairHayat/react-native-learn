@@ -91,12 +91,16 @@ body {
     @apply ml-4 text-2xl font-sans-bold text-primary;
   }
 
+  .home-add-icon-wrapper {
+    @apply border border-border p-2.5 rounded-full;
+  }
+
   .home-add-icon {
-    @apply size-12;
+    @apply size-6;
   }
 
   .home-balance-card {
-    @apply my-2.5 min-h-50 justify-between gap-5 rounded-bl-4xl rounded-tr-4xl bg-accent p-6;
+    @apply my-2.5 min-h-30 justify-between gap-5 rounded-bl-4xl rounded-tr-4xl bg-accent p-6;
   }
 
   .home-balance-label {
@@ -124,7 +128,7 @@ body {
   }
 
   .list-action {
-    @apply rounded-full border border-black/20 px-4 py-1;
+    @apply rounded-full border border-border px-4 py-1;
   }
 
   .list-action-text {
@@ -139,8 +143,12 @@ body {
     @apply flex-row items-center gap-3;
   }
 
+  .upcoming-icon-wrapper {
+    @apply bg-muted p-2 rounded-md;
+  }
+
   .upcoming-icon {
-    @apply size-14;
+    @apply size-7;
   }
 
   .upcoming-price {
@@ -171,8 +179,12 @@ body {
     @apply min-w-0 flex-1 flex-row items-center gap-3;
   }
 
+  .sub-icon-wrapper {
+    @apply p-3 bg-[#ffffff4f] rounded-xl;
+  }
+
   .sub-icon {
-    @apply size-16 rounded-lg;
+    @apply size-8 rounded-lg;
   }
 
   .sub-copy {

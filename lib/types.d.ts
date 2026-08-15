@@ -29,7 +29,7 @@ declare global {
   }
 
   interface SubscriptionCardProps extends Omit<Subscription, "id"> {
-    expanded: boolean;
+    expanded?: boolean;
     onPress: () => void;
     onCancelPress?: () => void;
     isCancelling?: boolean;
@@ -44,10 +44,7 @@ declare global {
     daysLeft: number;
   }
 
-  interface UpcomingSubscriptionCardProps extends Omit<
-    UpcomingSubscription,
-    "id"
-  > {}
+  type UpcomingSubscriptionCardProps = Omit<UpcomingSubscription, "id">;
 
   interface ListHeadingProps {
     title: string;
