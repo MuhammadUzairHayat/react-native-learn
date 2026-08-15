@@ -4,6 +4,7 @@ import { Stack } from "expo-router";
 import * as SplashScreen from "expo-splash-screen";
 import { useEffect } from "react";
 
+// Prevent the splash screen from auto-hiding before fonts are loaded
 void SplashScreen.preventAutoHideAsync();
 
 export default function RootLayout() {
@@ -22,6 +23,7 @@ export default function RootLayout() {
     }
   }, [fontsLoaded, fontError]);
 
+  // Only return null while loading AND there's no error
   if (!fontsLoaded && !fontError) return null;
 
   return <Stack screenOptions={{ headerShown: false }} />;
